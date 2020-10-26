@@ -69,3 +69,6 @@ install(DIRECTORY launch/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
   PATTERN ".svn" EXCLUDE
 )
+
+catkin_install_python(PROGRAMS src/fix_translator
+                      DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
