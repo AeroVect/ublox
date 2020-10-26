@@ -1,4 +1,4 @@
-### From the forked README
+### Below forked from the forked README:
 
 # ROS driver for ublox ZED-F9P receiver
 
