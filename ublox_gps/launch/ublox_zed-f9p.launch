@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
+
+    <remap from="/ublox_gps/fix"  to="/fix"/>
+    
     <include file="$(find ublox_gps)/launch/ublox_device.launch">
         <arg name="node_name" value="ublox_gps"/>
         <arg name="param_file_name" value="zed-f9p"/>
@@ -10,8 +13,6 @@
         <arg name="clear_params" value="false"/>
 
     </include>
-
-    <remap from="/ublox_gps/fix"  to="/fix"/>
 
 </launch>
 
