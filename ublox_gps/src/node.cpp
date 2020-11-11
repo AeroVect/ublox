@@ -272,6 +272,11 @@ void UbloxNode::subscribe() {
     gps.subscribe<ublox_msgs::NavCLOCK>(boost::bind(
         publish<ublox_msgs::NavCLOCK>, _1, "navclock"), kSubscribeRate);
 
+  nh->param("publish/nav/odo", enabled["nav_odo"], enabled["nav"]);
+  if (enabled["nav_odo"])
+    gps.subscribe<ublox_msgs::NavODO>(boost::bind(
+        publish<ublox_msgs::NavODO>, _1, "navodo"), kSubscribeRate);
+
   // INF messages
   nh->param("inf/debug", enabled["inf_debug"], false);
   if (enabled["inf_debug"])

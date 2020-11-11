@@ -10,7 +10,7 @@ uart1:
 
 # Enable u-blox message publishers
 publish:
-  all: false
+  all: true
   nav:
     all: true
     relposned: true
