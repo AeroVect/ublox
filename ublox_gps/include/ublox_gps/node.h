@@ -1284,6 +1284,16 @@ class HpgRovProduct: public virtual ComponentInterface {
   void initializeRosDiagnostics();
 
  protected:
+ //! Whether or not to enable dead reckoning
+  bool use_adr_;
+
+   
+  sensor_msgs::Imu imu_;
+  sensor_msgs::TimeReference t_ref_;
+  ublox_msgs::TimTM2 timtm2;
+
+  // Inserted callback to enable IMU publishing as Sensor_Msg
+  void callbackEsfMEAS(const ublox_msgs::EsfMEAS &m);
   /**
    * @brief Update the rover diagnostics, including the carrier phase solution
    * status (float or fixed).
